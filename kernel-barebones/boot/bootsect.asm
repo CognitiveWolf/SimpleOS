@@ -13,12 +13,12 @@ KERNEL_OFFSET equ 0x1000 ; The same one we used when linking the kernel
     call switch_to_pm ; disable interrupts, load GDT,  etc. Finally jumps to 'BEGIN_PM'
     jmp $ ; Never executed
 
-%include "boot_sect_print.asm"
-%include "boot_sect_print_hex.asm"
-%include "boot_sect_disk.asm"
-%include "32bit-gdt.asm"
-%include "32bit-print.asm"
-%include "32bit-switch.asm"
+%include "boot/boot_sect_print.asm"
+%include "boot/boot_sect_print_hex.asm"
+%include "boot/boot_sect_disk.asm"
+%include "boot/32bit-gdt.asm"
+%include "boot/32bit-print.asm"
+%include "boot/32bit-switch.asm"
 
 [bits 16]
 load_kernel:
